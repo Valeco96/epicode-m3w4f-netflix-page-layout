@@ -9,17 +9,24 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="netflix.css" />
     <script
       src="https://kit.fontawesome.com/1d75e38b03.js"
       crossorigin="anonymous"
     ></script>
     <title>Netflix - Homepage</title>
   </head>
+
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <img src="images/logo.svg" alt="website-logo" class="me-2" />
+          <img
+            src="images/Netflix_Logo_RGB.png"
+            alt="netflix-logo"
+            width="110px"
+            class="ms-3"
+          />
           <button
             class="navbar-toggler"
             type="button"
@@ -31,88 +38,76 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <button
-                  class="btn dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Browse
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Web courses</a></li>
-                  <li><a class="dropdown-item" href="#">Topics</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Main content</a>
-                  </li>
-                </ul>
+          <div class="collapse navbar-collapse ms-4" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-custom-fs">
+              <li class="nav-item">
+                <a class="nav-link text-white opacity-6" href="#"> Home </a>
               </li>
-              <li class="nav-item dropdown">
-                <button
-                  class="btn dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#"
                 >
-                  Landings
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
+                  TV Shows
+                </a>
               </li>
-              <li class="nav-item dropdown">
-                <button
-                  class="btn dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Pages
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Home page</a></li>
-                  <li><a class="dropdown-item" href="#">Classes</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Contacts</a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link text-white opacity-6" href="#"> Movies </a>
               </li>
-              <li class="nav-item dropdown">
-                <button
-                  class="btn dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Accounts
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Log in</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Create a new account</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Reach out</a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link text-white opacity-6" href="#">
+                  Recently Added
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white opacity-6" href="#"> My List </a>
               </li>
             </ul>
-            <span class="navbar-text"
-              ><i class="fa-regular fa-bell bg-icon"></i>div<img
-                src="images/avatar-1.jpg"
+
+            <span class="navbar-text">
+              <i class="fa-solid fa-magnifying-glass text-white"></i>
+              <a
+                class="text-white opacity-6 text-decoration-none nav-custom-fs ms-4"
+                href="#"
+                >KIDS</a
+              >
+              <i class="fa-solid fa-bell text-white ms-4"></i
+              ><img
+                src="images/profile.jpg"
                 alt="avatar-1"
-                width="50px"
-                height="50px"
-                class="rounded-5 ms-3"
+                width="30px"
+                height="30px"
+                class="rounded-5 ms-4 me-4"
             /></span>
           </div>
         </div>
       </nav>
     </header>
-    <main></main>
+
+    <main class="bg-dark">
+      <div class="container">
+        <h1 class="text-white">TV Shows</h1>
+        <div class="text-white d-flex justify-content-between">
+          <p>Genres</p>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center" data-bs-theme="dark">
+              <li class="page-item">
+                <a class="page-link text-secondary-emphasis border-secondary"
+                  ><i class="fa-solid fa-grip-lines"></i
+                ></a>
+              </li>
+              <li class="page-item">
+                <a class="page-link text-secondary" href="#"
+                  ><i class="fa-regular fa-square"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+
     <footer></footer>
 
     <script
