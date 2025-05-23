@@ -5,3 +5,20 @@
 .nav-custom-fs {
   font-size: 14px;
 }
+
+.carousel-custom-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: calc(250px * 6.5);
+  margin: auto;
+}
+
+.carousel-track {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+}
+
+.carousel-img {
+  width: 250px;
+  flex-shrink: 0;
+}
