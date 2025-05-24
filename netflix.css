@@ -1,3 +1,21 @@
+body {
+  overflow-x: hidden; /*per nascondere la barra alla fine della pagina che si forma a causa dell'overflow:visible del carousel */
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-img {
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.carousel-item > .row {
+  scroll-behavior: smooth; /*per uno scorrimento fluido delle immagini*/
+  padding-bottom: 1rem;
+}
+
 .opacity-6 {
   opacity: 0.6;
 }
@@ -18,10 +36,20 @@
   transition: transform 0.5s ease;
 }
 
-.carousel-img {
-  width: 280px;
+@media (min-width: 1200px) {
+  .carousel-img {
+    width: 280px;
+  }
 }
 
-.carousel-inner {
-  overflow: visible;
+@media (max-width: 991.98px) {
+  .carousel-img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-img {
+    width: 180px;
+  }
 }
