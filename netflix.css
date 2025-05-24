@@ -2,7 +2,7 @@ body {
   overflow-x: hidden; /*per nascondere la barra alla fine della pagina che si forma a causa dell'overflow:visible del carousel */
 }
 
-.carousel-inner {
+.carousel-item {
   overflow: visible;
 }
 
@@ -44,6 +44,18 @@ body {
   color: white;
   padding: 25px 15px;
   font-size: 25px;
+  opacity: 0.6;
+}
+
+#link-lists ul {
+  color: white;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+#link-lists ul li {
+  list-style: none;
+  line-height: 2.5;
 }
 
 @media (min-width: 1900px) {
