@@ -40,6 +40,12 @@ body {
   transition: transform 0.5s ease;
 }
 
+.fa-brands {
+  color: white;
+  padding: 25px 15px;
+  font-size: 25px;
+}
+
 @media (min-width: 1900px) {
   .carousel-img {
     width: 280px;
