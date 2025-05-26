@@ -1,4 +1,6 @@
+html,
 body {
+  max-width: 100%;
   overflow-x: hidden; /*per nascondere la barra alla fine della pagina che si forma a causa dell'overflow:visible del carousel */
 }
 
@@ -13,9 +15,9 @@ body {
   color: #dee2e6;
 }
 
-.carousel-item {
+/*.carousel-item {
   overflow: visible;
-}
+}*/
 
 .carousel-img {
   width: 230px;
@@ -52,18 +54,6 @@ body {
   font-size: 14px;
 }
 
-.carousel-custom-wrapper {
-  overflow: visible;
-  position: relative;
-  width: calc(250px * 6.8);
-  margin: 5px;
-}
-
-.carousel-track {
-  transform: translateX(0);
-  transition: transform 0.5s ease;
-}
-
 #social-icons span {
   flex-basis: 100px; /* Larghezza iniziale per gli elementi */
   flex-shrink: 1; /* Permette agli elementi di restringersi */
@@ -94,19 +84,63 @@ body {
 }
 
 @media (min-width: 1900px) {
+  .carousel-inner,
+  .carousel-item {
+    overflow: visible; /*solo su desktop per un overflow di immagine parziale*/
+  }
   .carousel-img {
     width: 280px;
   }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 992px) {
+  .carousel-inner,
+  .carousel-item {
+    overflow: visible; /*solo su desktop per un overflow di immagine parziale*/
+  }
   .carousel-img {
-    width: 200px;
+    width: 280px;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 992px) {
+  body {
+    max-width: 100vh;
+  }
+  .carousel-inner,
+  .carousel-item {
+    overflow: hidden !important;
+  }
   .carousel-img {
-    width: 180px;
+    width: 100%; /*per rendere le immagini responsive nei contenitori piu'piccoli*/
+    max-width: 230px;
+  }
+  .carousel-item .row {
+    flex-wrap: wrap; /*per spezzare la riga con lo schermo piu' piccolo*/
+    justify-content: center;
+  }
+  .carousel-item .row > div:hover {
+    transform: none; /*cosi' non si ingrandiscono su dispositivi mobili*/
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    max-width: 100vh;
+  }
+  .carousel-inner,
+  .carousel-item {
+    overflow: hidden !important;
+  }
+  .carousel-img {
+    width: 100%;
+    max-width: 180px;
+  }
+  .carousel-item .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .carousel-item .row > div:hover {
+    transform: none;
   }
 }
