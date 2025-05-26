@@ -2,6 +2,10 @@ body {
   overflow-x: hidden; /*per nascondere la barra alla fine della pagina che si forma a causa dell'overflow:visible del carousel */
 }
 
+.navbar-toggler-icon {
+  color: white;
+}
+
 .navbar-text a {
   color: #dee2e6;
 }
