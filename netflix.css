@@ -23,6 +23,19 @@ body {
   padding-bottom: 1rem;
 }
 
+.carousel-item .row > div:hover {
+  transform: scale(1.25);
+  cursor: pointer;
+}
+
+.carousel-item .row > div {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner {
+  overflow: visible; /*per permettere l'uscita del div intero dal carousel-inner*/
+}
+
 .opacity-6 {
   opacity: 0.6;
 }
