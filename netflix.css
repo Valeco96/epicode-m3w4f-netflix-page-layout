@@ -60,6 +60,12 @@ body {
   transition: transform 0.5s ease;
 }
 
+#social-icons span {
+  flex-basis: 100px; /* Larghezza iniziale per gli elementi */
+  flex-shrink: 1; /* Permette agli elementi di restringersi */
+  margin: 5px; /* Spazio tra gli elementi */
+}
+
 .fa-brands {
   color: white;
   padding: 25px 15px;
