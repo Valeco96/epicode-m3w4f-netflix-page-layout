@@ -669,26 +669,41 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      let track = document.querySelector(".carousel-track");
+      let track = document.querySelector(".carousel-inner"); //per selezionare il contenitore principale del carousel
       let nextBtn = document.querySelector(".carousel-control-next");
       let prevBtn = document.querySelector(".carousel-control-prev");
 
-      const IMGWIDTH = 230;
-      let currentSlide = 0;
+      //individua la riga di elementi da scorrere
+      const ROW = track.querySelector(".carousel-item.active .row"); //.row prende la riga delgi elementi attivi e la rende visibile
+      const slideItems = row.querySelector(".col-auto"); // tutti i singoli elementi della riga vengono selezionati
+
+      //crea le variabili per lo scorrimento
+      let currentSlide = 0; //per tenere traccia della posizione corrente del carousel
+      const containerWidth = row.offsetWidth; //con offsetWidth ottieni la larghezza totale di un elemento in pixel. Puoi usarlo per restituire la width di un elemento, in questo caso comodo poiche' sono diverse
+      const itemWidth = slideItems[0].offsetWidth;
+      const visibleItems = Math.floor(containerWidth / itemWidth); //cosi' calcoli quanti elementi sono visibili contemporaneamente nella riga, calcolo larghezza visibile diviso la larghezza di un singolo elemento
+      const totalSlides = slideItems.length - visibleItems; //quante pagine di scroll puoi fare, tutti gli elementi tranne quelli visibili
+
+      //funzione per aggiornare lo spostamento
+      function updateCarousel() {
+        const offset = slideItems[0].offsetWidth * currentSlide;
+        row.style.transform = `translateX(-${offset}px)`;
+        row.style.transition = "transform 0.7s ease-in-out";
+      } // calcola lo spostamento orizzontale in pixel in base a quanti elementi hai scorso (currentSlide)
 
       nextBtn.addEventListener("click", () => {
         if (currentSlide < 1) {
           currentSlide++;
-          track.style.transform = `translateX(-${IMGWIDTH * currentSlide}px)`;
+          updateCarousel();
         }
-      });
+      }); // quando viene cliccata la freccia next incrementi currentSlide e aggiorni la posizione tramite la funzione che viene attivata
 
       prevBtn.addEventListener("click", () => {
         if (currentSlide > 0) {
           currentSlide--;
-          track.style.transform = `translateX(-${IMGWIDTH * currentSlide}px)`;
+          updateCarousel();
         }
-      });
+      }); // stesso con pulsante prev, ma stavolta decrementi e aggiorni la posizione
     </script>
   </body>
 </html>
